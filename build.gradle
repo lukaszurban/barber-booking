@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.3.3.RELEASE'
+}
+
+group 'com.urbanl'
+version '0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter:2.3.5.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.3.5.RELEASE'
+    implementation 'org.codehaus.groovy:groovy-all:2.4.15'
+
+    testImplementation('org.spockframework:spock-core:2.0-M4-groovy-3.0')
+    testImplementation('org.spockframework:spock-spring:2.0-M4-groovy-3.0')
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
